@@ -7,7 +7,7 @@ const Header = () =>{
                 {/* <a className={classes.icon}></a> */}
                 <h3 className={classes.title}> Advices</h3>
             </div>
-            <a href="https://github.com/skhulbe75/advice-app-react.git" target="_blank" className={classes["show-code"]}>Show me the code</a>
+            <a href="https://github.com/skhulbe75/advice-app-react.git" target="_blank" className={classes["show-code"]} rel="noreferrer">Show me the code</a>
         </div>
     )
 };
