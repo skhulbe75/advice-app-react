@@ -1,45 +1,18 @@
 import React from 'react';
-import axios from 'axios';
+import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
 
 import './App.css'
+import Advice from './components/Advice';
 
-class App extends React.Component{
- 
-  state = {advice: ''};
- 
-  componentDidMount(){
-    this.fetchAdvice();
-  }
-
-  fetchAdvice = () => {
-    axios.get('https://api.adviceslip.com/advice')
-        .then((response) => {
-          const {advice} = response.data.slip;
-          
-          this.setState({advice: advice});
-        })
-        .catch((error) => {
-          console.log(error);
-        })
-  }
-
-  render(){
-
-    //destructring 
-    const {advice} = this.state;
+const App = () => {
     return(
       <div className='app'>
-        <div className='card'> 
-          <h1 className='heading'>{advice}</h1>
-          <button className='button' onClick={this.fetchAdvice}>
-            <span>
-              Random 
-            </span>
-          </button>
-        </div>
+        <Header />
+        <Advice />
+        <Footer />
       </div>
     );
-  }
 }
 
 export default App;
